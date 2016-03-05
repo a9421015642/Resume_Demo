@@ -7,7 +7,7 @@
                 <div class="col-lg-12 text-center">
                  <div class="show_page">
                   <% if user_basic? %>
-                   <%= link_to "#{session[:name]} - 顯示履歷表", basic_information_path(@user) , class: 'show_page_btn btn btn-success' %>
+                   <%= link_to "#{session[:name]} - 顯示履歷表", show_curriculum_vitae_info_users_path(@user) , class: 'show_page_btn btn btn-success' %>
                   <% else %>
                   <h2><%= session[:name] %></h2>
                   <% end %>

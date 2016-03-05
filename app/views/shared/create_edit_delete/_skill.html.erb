@@ -1,0 +1,25 @@
+<div class="well col-md-12">
+<div class="col-md-8">
+  <p>技能 :</p> 
+<%= form_for @skill do |f| %>
+  <div class="well col-md-12">
+    <%= f.hidden_field :user_id, :value => session[:user_id] %> 
+    <div class="form-group">
+      <%= f.label "前端 / 後端 / 資料庫 / 其他" %>
+      <br>
+  <%= f.select  :category ,  [['前端', 1], ['後端', 2], ['資料庫', 3], ['其他', 4]]%>   ( *必填 )
+      <br><br>
+  <%= f.text_field :title %>   ( *必填 )
+      <br><br>
+      <%= f.radio_button :status, 1 %><%= label_tag :略懂 %>
+      <%= f.radio_button :status, 2 %><%= label_tag :一般 %>
+      <%= f.radio_button :status, 3 %><%= label_tag :小有研究 %>
+      <%= f.radio_button :status, 4 %><%= label_tag :精通 %>   ( *必填 )
+    </div>
+  </div>
+  <div class="pull-right">
+    <%= submit_tag "確認", class: "btn btn-success" %>
+  </div>
+<% end %>
+</div>
+</div>

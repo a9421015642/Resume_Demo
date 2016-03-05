@@ -13,8 +13,13 @@
   <div class="container">
   <%= render 'shared/title', title: 'Create 基本資料'%>
     <div class="well col-md-12">
+    <% if !user_basic? %>
     <%# 新增 基本資料頁面 %>
     <%= render 'shared/create_edit_delete/basic_information' %>
+    <% else %>
+    <% controller.redirect_to  new_curriculum_vitae_info_users_path  %>
+    <% end %>
     </div>
   </div>
+</div>
 </div>

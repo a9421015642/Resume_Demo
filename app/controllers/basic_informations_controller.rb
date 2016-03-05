@@ -5,6 +5,7 @@ class BasicInformationsController < ApplicationController
 
   def new
     @basic_information = BasicInformation.new
+    @user = User.find(session[:user_id])
   end
   def create
     @basic_information = BasicInformation.new(basic_information_params) 

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'users#index'
-  resources :users
+  resources :users do
+    collection do
+      get  :new_curriculum_vitae_info
+    end
+  end
   resources :basic_informations  
   resources :skills 
   resources :works  
