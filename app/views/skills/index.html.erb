@@ -1,1 +1,68 @@
-index.html.erb
+ <div class="container">
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_index' %>
+    </div>
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_userpage' %>
+    </div>
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_edit_curriculum_vitae_info' %>
+    </div>
+  </div>
+<div class="row basic_info_new">
+<div class="container">
+<div class="col-md-12">
+<%= render 'shared/title', title: 'Edit / Delete 個人技能'%>
+</div>
+  <div class="well col-md-12">
+  <div class="row skill_edit">
+  <% if find_userid_front_end? %>
+  <div>前端 :</div>
+    <% @front_end_skill.each do |skill| %>
+    <p class="well col-md-4">
+    <%=  getskill_status( skill.title , skill.status) %>
+    <%= link_to  '修改'  , edit_skill_path(skill) ,class: 'edt_btn btn btn-primary' %>
+    <%= link_to "刪除", skill, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %>
+     </p>
+    <% end %> 
+  <% end %> 
+  </div>
+  <div class="row  skill_edit">
+  <% if find_userid_back_end? %>
+  <div  class="skill_edit">後端 :</div>
+    <% @back_end_skill.each do |skill| %>
+    <p class="well col-md-4">
+     <%=  getskill_status( skill.title , skill.status) %>
+    <%= link_to  '修改'  , edit_skill_path(skill) ,class: 'edt_btn btn btn-primary' %>
+    <%= link_to "刪除", skill, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %>
+    </p>
+    <% end %>
+  <% end %> 
+  </div>
+  <div class="row skill_edit">
+  <% if find_userid_database? %>
+  <div  class="skill_edit">資料庫 :</div>
+  <% @database_skill.each do |skill| %>
+    <p class="well col-md-4">
+    <%=  getskill_status( skill.title , skill.status) %>
+    <%= link_to  '修改'  , edit_skill_path(skill) ,class: 'edt_btn btn btn-primary' %>
+    <%= link_to "刪除", skill, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %>
+    </p>
+    <% end %>
+  <% end %> 
+  </div>
+  <div class="row skill_edit">
+  <% if find_userid_other? %>
+  <div  class="skill_edit">其他 :</div>
+  <% @other_skill.each do |skill| %>
+    <p class="well col-md-4">
+    <%=  getskill_status( skill.title , skill.status) %>
+    <%= link_to  '修改'  , edit_skill_path(skill) ,class: 'edt_btn btn btn-primary' %>
+    <%= link_to "刪除", skill, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %>
+    </p>
+    <% end %>
+  <% end %> 
+  </div>
+  </div>
+ </div>
+  </div>

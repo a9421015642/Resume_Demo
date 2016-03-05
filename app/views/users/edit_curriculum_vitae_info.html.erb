@@ -1,0 +1,63 @@
+<%= render 'shared/user_show_top_nav' ,link1:  (link_to 'Edit履歷表 ', edit_curriculum_vitae_info_users_path) ,link2: (link_to 'Create履歷表 ', new_basic_information_path) , link3: (link_to '首頁', root_path) %>
+<header>
+  <div class="neighborhood-guides">
+        <div class="container">
+            <h1>修改 / 刪除 <%= link_to '個人', user_path(@user) ,class: 'btn btn-primary' %></h1>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                <% if user_basic? %>
+                  <div class="thumbnail">
+        <div class="features edit_delete_page">
+          <p>個人資料</p>
+          <div class="thumbnail_features_div1 ">
+          <%= link_to '修改', edit_basic_information_path(@basic_info) ,class: 'btn btn-primary' %>
+          </div>
+        </div>
+                  </div>
+      <% else %>  
+                <% controller.redirect_to  new_basic_information_path  %>
+                <% end %> 
+                </div>
+                <div class="col-md-3">
+                <% if user_skill? %>
+                  <div class="thumbnail">
+                    <div class="features edit_delete_page">
+                      <p>技能</p>
+                      <div class="thumbnail_features_div1 ">
+                      <%= link_to '修改 / 刪除 ', skills_path ,class: 'btn btn-primary' %>
+                      </div>
+                    </div>
+                   </div>
+                <% end %>   
+                </div>
+                <div class="col-md-3">
+                <% if user_work? %>
+                  <div class="thumbnail">
+                    <div class="features edit_delete_page">
+                      <p>作品</p>
+                      <div class="thumbnail_features_div1 ">
+                      <%= link_to '修改 / 刪除 ', works_path ,class: 'btn btn-primary' %>
+                      </div>
+                    </div>
+                   </div>
+                <% end %>   
+                </div>
+                <div class="col-md-3">
+                <% if user_autobiography? %>
+                  <div class="thumbnail">
+                    <div class="features edit_delete_page">
+                        <p>自傳</p>
+                      <div class="thumbnail_features_div1 ">
+                      <%= link_to '修改 / 刪除 ', autobiographies_path,class: 'btn btn-primary' %>
+                      </div>
+                    </div>
+                   </div>
+                 <% end %>   
+                </div>              
+            </div>
+        </div>
+    </div>
+</header>

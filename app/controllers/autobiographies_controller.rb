@@ -1,6 +1,9 @@
 class AutobiographiesController < ApplicationController 
 
   def index
+    @user = User.find(session[:user_id])
+    @autobiographies = Autobiography.where(user_id: @user.id)
+     @first_autobiography = @autobiographies.first
   end
   
   def new
@@ -14,6 +17,28 @@ class AutobiographiesController < ApplicationController
         render :new
       end 
   end
+
+def edit
+    @autobiography = Autobiography.find(params[:id])
+  end
+  def update
+    @autobiography = Autobiography.find(params[:id])
+      
+      if @autobiography.update!(autobiography_params)
+      redirect_to autobiographies_path
+    else
+      render :edit
+    end 
+  end
+  
+  def destroy
+    @autobiography_id = Autobiography.find(params[:id])
+      if @autobiography_id.destroy!
+      redirect_to autobiography_path
+    end
+  end
+
+
 
 
   private

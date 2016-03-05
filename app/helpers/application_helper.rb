@@ -21,6 +21,32 @@ module ApplicationHelper
   def user_basic?
     !!select_user_basic
   end
+  #skill
+  def select_user_skill
+    @user_new = find_user
+    @user_skill = Skill.find_by(User_id: @user_new.id)
+  end
+  def user_skill?
+    !!select_user_skill
+  end
+    
+  #work
+  def select_user_work
+    @user_new = find_user
+    @user_work = Work.find_by(User_id: @user_new.id)
+  end
+  def user_work?
+    !!select_user_work
+  end
+  
+  #Autobiography
+  def select_user_autobiography
+    @user_new = find_user
+    @user_autobiography = Autobiography.find_by(User_id: @user_new.id)
+  end
+  def user_autobiography?
+    !!select_user_autobiography
+  end
 
   #判斷 front_end
   def skill_find_userid_front_end
@@ -70,6 +96,13 @@ module ApplicationHelper
     !!select_user_autobiography
   end
 
-  
+  def getskill_status(title,status)
+    case status  
+      when 4  then  text = title+"  :   精通"
+        when 3  then  text = title+"  :   小有研究"
+        when 2  then  text = title+"  :   一般"
+      when 1  then  text = title+"  :   略懂" 
+      end
+  end
 
 end

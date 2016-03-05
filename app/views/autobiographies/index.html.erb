@@ -1,0 +1,57 @@
+ <div class="container">
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_index' %>
+    </div>
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_userpage' %>
+    </div>
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_edit_curriculum_vitae_info' %>
+    </div>
+  </div>
+<div class="row basic_info_new">
+<div class="container">
+<div class="col-md-12">
+<%= render 'shared/title', title: 'Edit / Delete 個人自傳'%>
+</div>
+          <% if(@autobiographies.first == nil) %>
+          <% else %>
+            <div class="features autobiography_features">
+          <div class="autobiography_company">
+            <ul class="nav nav-tabs nav-justified">
+              <li class="active"><a data-toggle="tab" href="#<%= @autobiographies.first.company %>"><%= @first_autobiography.company %></a></li>
+              <% @autobiographies.each do |autobiography| %>
+              <% if(autobiography.company != @first_autobiography.company) %>
+              <li><a data-toggle="tab" href="#<%= autobiography.company %>"><%= autobiography.company %></a></li>
+              <% end %>
+              <% end %>
+            </ul>
+            </div>
+
+            <div class="tab-content well">
+              <div id="<%= @autobiographies.first.company %>" class="tab-pane fade in active">
+                <h3>
+                <%= @first_autobiography.company %> 
+                <%= link_to '修改', edit_autobiography_path(@first_autobiography) ,class: 'edt_btn btn btn-primary' %>
+                <%= link_to "刪除", @first_autobiography, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %>
+                </h3>
+                <p><%= @autobiographies.first.description %></p>
+              </div>
+
+              <% @autobiographies.each do |autobiography| %>
+              <% if(autobiography.company != @first_autobiography.company) %>
+              <div id="<%= autobiography.company %>" class="tab-pane fade">
+                <h3>
+                <%= autobiography.company %>
+                <%= link_to '修改', edit_autobiography_path(autobiography) ,class: 'edt_btn btn btn-primary' %> 
+                <%= link_to "刪除", autobiography, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %> 
+                </h3>
+                <p><%= autobiography.description %></p>
+              </div>
+              <% end %>
+              <% end %>
+            </div>
+            </div>
+          <% end %>
+          </div>
+</div>

@@ -1,10 +1,10 @@
 class WorksController < ApplicationController
 
   def index
+    @user= User.find(session[:user_id])
+    @works = Work.where(user_id: @user.id)
   end
-  # def show
-  #   @works = Work.where(params[:user_id])
-  # end
+
   def new
     @work = Work.new
   end
@@ -17,6 +17,25 @@ class WorksController < ApplicationController
       end 
   end
   
+  def edit
+    @work = Work.find(params[:id])
+  end
+  def update
+    @work = Work.find(params[:id])
+      
+    if @work.update!(work_params)
+      redirect_to works_path
+    else
+      render :edit
+    end 
+  end
+
+  def destroy
+    @work_id = Work.find(params[:id])
+      if @work_id.destroy!
+      redirect_to work_path
+    end
+  end
 
 
   private

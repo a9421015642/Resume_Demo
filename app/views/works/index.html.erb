@@ -1,0 +1,57 @@
+ <div class="container">
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_index' %>
+    </div>
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_userpage' %>
+    </div>
+    <div class="col-md-4">
+    <%= render 'shared/backpage/back_to_edit_curriculum_vitae_info' %>
+    </div>
+  </div>
+<div class="row basic_info_new">
+<div class="container">
+<div class="col-md-12 ">
+<%= render 'shared/title', title: 'Edit / Delete 個人作品'%>
+</div>
+      <div class="row">
+        <div class="col-lg-12 ">
+        <% @works.each do |work| %>
+        <div class="row well">
+          <div class="row">
+            <div class="col-lg-2">
+              <label class="works_title">Title :</label>
+            </div>
+            <div class="col-lg-10">
+              <label class="works_title"><%= work.title %></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">
+              <label class="works_title">描述 :</label>
+            </div>
+            <div class="col-lg-10">
+              <label class="works_title"><%= work.description %></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">
+              <label class="works_title">LINK :</label>
+            </div>
+            <div class="col-lg-10">
+              <label class="works_title"><a href="<%= work.link %>"><%= work.link %></a></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-2 btn-suecss">
+             <%= link_to '修改', edit_work_path(work) ,class: 'edt_btn btn btn-primary' %>
+             <%= link_to "刪除", work, method: :delete, data: {confirm: "You sure?"} ,class: 'edt_btn btn btn-primary' %>
+            </div>
+          </div>
+          </div>
+        <% end %>
+        </div>
+      </div></div>
+</div>
