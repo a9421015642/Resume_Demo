@@ -33,6 +33,29 @@ class UsersController < ApplicationController
     @works = Work.where(user_id: @user_new.id)
     @autobiographies = Autobiography.where(user_id: @user_new.id)
   end
+  def show_curriculum_vitae_info
+    @id = params[:id]
+    #1.找出登入user
+    @user_show = User.find(session[:user_id])
+    #2.透過user找出該user對應的基本資料(1對1)
+    @basic_info = BasicInformation.find_by(user_id: @user_show.id)
+    #3.透過user找出該user對應的技能(1對多)
+    #<js  change css>把該user的Skill的title 全部找出來再丟進array
+    @skills = Skill.where(User_id: session[:user_id])
+    @array = Array.new
+    @skills.each do |t|
+      @array << t.title
+    end
+    
+    @front_end_skill = Skill.where(category: 1,User_id: session[:user_id])
+    @back_end_skill = Skill.where(category: 2,User_id: session[:user_id])
+    @database_skill =  Skill.where(category: 3,User_id: session[:user_id])
+    @other_skill       =  Skill.where(category: 4,User_id: session[:user_id])
+    #4.透過user找出該user對應的作品(1對多)
+    @works = Work.where(User_id: session[:user_id])
+    #5.透過user找出該user對應的自傳(1對多)
+    @autobiographies = Autobiography.where(User_id: session[:user_id])
+  end
 
   private 
   def user_params

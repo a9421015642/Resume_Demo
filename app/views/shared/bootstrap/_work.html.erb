@@ -1,0 +1,40 @@
+	<section id="works">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>作品</h2>
+					<hr class="star-primary">
+				</div>
+			</div>
+			<div class="row well">
+				<div class="col-lg-8 col-lg-offset-2 ">
+				<% @works.each do |work| %>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="works_title">Title :</label>
+						</div>
+						<div class="col-lg-10">
+							<label class="works_title"><%= work.title %></label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="works_title">描述 :</label>
+						</div>
+						<div class="col-lg-10">
+							<label class="works_title"><%= work.description %></label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="works_title">LINK :</label>
+						</div>
+						<div class="col-lg-10">
+							<label class="works_title"><a href="<%= work.link %>"><%= work.link %></a></label>
+						</div>
+					</div>
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</section>

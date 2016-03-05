@@ -1,0 +1,29 @@
+<nav class="navbar-default user_index_nav">
+	<div class="row">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+					<i class="icon-bar"></i>
+					<i class="icon-bar"></i>
+					<i class="icon-bar"></i>
+				</button><%= link_to "個人頁面", user_path(session[:user_id]) %>
+				</div>
+			<div id="navbar1" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li>
+						<a href="#about">ABOUT</a>
+					</li>
+					<li>
+						<a href="#portfolio">技能</a>
+					</li>
+					<li>
+						<a href="#works">作品</a>
+					</li>
+					<li>
+						<a href="#autobiography">自傳</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,149 @@
+	<!-- Portfolio Modals -->
+	<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="modal-body">
+							<h2>前端</h2>
+							<hr class="star-light">
+							<img src="/assets/html5-1024x576.jpg" class="img-responsive img-centered" alt="">
+							<table class="table table-hover">
+								<div id="array_test" name="<%= @array.length %>" style="visibility:hidden"></div>
+								<% for i in 0...@array.length  %>
+								<div id="test_<%= i+1 %>" name="<%= @array[i] %>" style="visibility:hidden"></div>
+								<% end %>
+								<tr class="info">
+									<td></td>
+									<td>略懂</td>
+									<td>一般</td>
+									<td>小有研究</td>
+									<td>精通</td>
+								</tr>
+								<% @front_end_skill.each do |skill| %>
+								<tr class="success">			
+									<td><%= skill.title %></td>
+									<div id="<%= skill.title%>_title" name="<%= skill.title%>" style="visibility:hidden"><%= skill.title %></div>
+									<div id="<%= skill.title%>_status" name="<%= skill.status%>" style="visibility:hidden"><%= skill.status %></div>
+									<td id="<%= skill.title %>_td1">
+									</td>
+									<td id="<%= skill.title %>_td2">
+									</td>
+									<td id="<%= skill.title %>_td3">
+									</td>
+									<td id="<%= skill.title %>_td4">
+									</td>
+									
+									</tr>
+								<% end %>
+								<%#####################################  %>
+							</table>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="modal-body">
+							<h2>後端</h2>
+							<hr class="star-light">
+							<img src="/assets/01.jpg" class="img-responsive img-centered" alt="">
+							<table class="table table-hover">
+								<tr class="info">
+									<td></td>
+									<td>略懂</td>
+									<td>一般</td>
+									<td>小有研究</td>
+									<td>精通</td>
+								</tr>
+								<% @back_end_skill.each do |skill| %>
+								<tr class="success">			
+									<td><%= skill.title %></td>
+									<div id="<%= skill.title%>_title" name="<%= skill.title%>" style="visibility:hidden"><%= skill.title %></div>
+									<div id="<%= skill.title%>_status" name="<%= skill.status%>" style="visibility:hidden"><%= skill.status %></div>
+									<td id="<%= skill.title %>_td1">
+									</td>
+									<td id="<%= skill.title %>_td2">
+									</td>
+									<td id="<%= skill.title %>_td3">
+									</td>
+									<td id="<%= skill.title %>_td4">
+									</td>
+									
+									</tr>
+								<% end %>
+<%############################################### %>
+							</table>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="modal-body">
+							<h2>資料庫</h2>
+							<hr class="star-light">
+							<img src="/assets/DB.png" class="img-responsive img-centered" alt="">
+							<table class="table table-hover">
+								<tr class="info">
+									<td></td>
+									<td>略懂</td>
+									<td>一般</td>
+									<td>小有研究</td>
+									<td>精通</td>
+								</tr>
+								<% @database_skill.each do |skill| %>
+								<tr class="success">			
+									<td><%= skill.title %></td>
+									<div id="<%= skill.title%>_title" name="<%= skill.title%>" style="visibility:hidden"><%= skill.title %></div>
+									<div id="<%= skill.title%>_status" name="<%= skill.status%>" style="visibility:hidden"><%= skill.status %></div>
+									<td id="<%= skill.title %>_td1">
+									</td>
+									<td id="<%= skill.title %>_td2">
+									</td>
+									<td id="<%= skill.title %>_td3">
+									</td>
+									<td id="<%= skill.title %>_td4">
+									</td>
+									
+									</tr>
+								<% end %>
+								<%##########################################  %>
+							</table>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

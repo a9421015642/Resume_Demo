@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get  :new_curriculum_vitae_info
+      get  :show_curriculum_vitae_info
     end
   end
   resources :basic_informations  

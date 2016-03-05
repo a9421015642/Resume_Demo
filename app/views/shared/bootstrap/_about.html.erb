@@ -1,0 +1,44 @@
+<section class="success" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>About</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-2">
+				<p>中文姓名: <%= @basic_info.chinesename %></p>
+				<br>
+				<p>英文姓名: <%= @basic_info.englishname %></p>
+				<br>
+				<% if(@basic_info.gender == 0) %>
+				<p>性別: 女</p>
+				<% elsif(@basic_info.gender == 1) %>
+				<p>性別: 男</p>
+				<% end %>
+				<br>
+				<p>生日: <%= @basic_info.birthday %></p>
+				<br>
+				<% if(@basic_info.military_service == 0) %>
+				<p>兵役: 未當兵</p>
+				<% elsif(@basic_info.military_service == 1) %>
+				<p>兵役: 已退伍</p>
+				<% end %>
+				<br>
+			</div>
+			<div class="col-lg-4">
+				<p>電話: <%= @basic_info.telephone %></p>
+				<br>
+				<p>手機: <%= @basic_info.phone %></p>
+				<br>
+				<p>地址: <%= @basic_info.address %></p>
+				<br>
+				<p>最高學歷: <%= @basic_info.educational_background %></p>	
+				<br>
+				<p>其他學歷: <%= @basic_info.other_educational_background %></p>
+				<br>
+			</div>
+		</div>
+	</div>
+</section>

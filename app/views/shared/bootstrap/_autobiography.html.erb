@@ -1,0 +1,39 @@
+	<section id="autobiography">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>自傳</h2>
+					<hr class="star-light">
+				</div>
+			</div>
+		</div>
+					<div class="container">
+					<% if(@autobiographies.first == nil) %>
+					<% else %>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="tab" href="#<%= @autobiographies.first.company %>"><%= @autobiographies.first.company %></a></li>
+							<% @autobiographies.each do |autobiography| %>
+							<% if(autobiography.company != @autobiographies.first.company) %>
+							<li><a data-toggle="tab" href="#<%= autobiography.company %>"><%= autobiography.company %></a></li>
+							<% end %>
+							<% end %>
+						</ul>
+
+						<div class="tab-content">
+							<div id="<%= @autobiographies.first.company %>" class="tab-pane fade in active">
+								<h3><%= @autobiographies.first.company %></h3>
+								<p><%= @autobiographies.first.description %></p>
+							</div>
+
+							<% @autobiographies.each do |autobiography| %>
+							<% if(autobiography.company != @autobiographies.first.company) %>
+							<div id="<%= autobiography.company %>" class="tab-pane fade">
+								<h3><%= autobiography.company %></h3>
+								<p><%= autobiography.description %></p>
+							</div>
+							<% end %>
+							<% end %>
+						</div>
+					<% end %>
+					</div>
+	</section>
