@@ -1,0 +1,24 @@
+<div class="index">
+  <div class="user_index_nav">
+    <div class="container">
+      <% if logged_in? %>
+      <ul class="pull-left">
+      <span id="link_user" class="glyphicon glyphicon-user">
+        <li><%= link_to "#{session[:name]}", user_path(session[:user_id]) %></li>
+      </span>
+      </ul>
+      <% end %>
+      <% if logged_in? %>
+      <ul class="pull-right">
+        <li><%= link_to '會員登出', logout_path %></li>
+        <li><a href="#">Help</a></li>
+      </ul>  
+        <% else %>
+        <ul class="pull-right">
+          <li><%= link_to '會員註冊', new_user_path %></li>
+          <li><%= link_to '會員登入', login_path %></li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

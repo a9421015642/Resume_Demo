@@ -1,0 +1,19 @@
+<div class="col-md-12">
+  <div class="well col-md-8"> 
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <br>
+      <%= f.password_field :password %>
+    </div>
+  <br>
+  <%= f.submit(@user.new_record? ? '註冊' : 'Update Profile', class: 'btn btn-success') %>
+  <% end %>
+  </div>
+</div>
+

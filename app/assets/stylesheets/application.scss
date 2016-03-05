@@ -16,3 +16,82 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.glyphicon.glyphicon-user {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+//首頁 大圖
+.jumbotron {
+  height: 1000px;
+  background-image: url(rubyonrails_1024.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container h1 {
+  color: yellow;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 25px;
+  color: white;
+}
+//首頁 最下面黑色的div
+.index {
+  height: 35px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.user_index_nav {
+  background-color: black;
+  height: 35px;
+}
+
+.user_index_nav a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+.nav li {
+  display: inline;
+}
+
+ul li {
+  display: inline;
+}
+//ul 底下a hover(滑鼠移過去時)
+ul a:hover {
+  color: darkgray;
+  text-decoration: none;
+}
+//返回首頁a
+.backtoindex a {
+  font-family: Arial, serif, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.backtoindex a:hover {
+  text-decoration: none;
+  color: darkgray;
+}
