@@ -326,8 +326,8 @@ hr.star-primary {
 
 [class^="caption"] {
   //  background-image: url("/images/html5-1024x576.jpg");
-  background-size: 350px 300px;
-  width: 350px;
+  background-size: 300px 300px;
+  width: 300px;
   height: 300px;
   background: rgba(24, 188, 156, 0.9);
   opacity: 0;
@@ -335,8 +335,8 @@ hr.star-primary {
 }
 
 .img-responsive {
-  background-size: 350px 300px;
-  width: 350px;
+  background-size: 300px 300px;
+  width: 300px;
   height: 300px;
 }
 
@@ -344,19 +344,6 @@ hr.star-primary {
   opacity: 1;
 }
 
-.caption2 {
-  //background-image: url("/assets//01.jpg");
-  background-size: 350px 300px;
-  width: 350px;
-  height: 300px;
-}
-
-.caption3 {
-  //background-image: url("/images/DB.png");
-  background-size: 350px 300px;
-  width: 350px;
-  height: 300px;
-}
 
 .pic {
   visibility: hidden;
@@ -369,7 +356,7 @@ hr.star-primary {
   width: 350px;
   height: 300px;
   text-align: center;
-  padding: 100px 0 0 20px;
+  padding: 35%  25% 0 0;
 }
 
 .portfolio-modal .modal-content {
