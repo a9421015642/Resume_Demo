@@ -23,11 +23,6 @@ class UsersController < ApplicationController
   def new_curriculum_vitae_info
     @autobiography = Autobiography.new
     
-    # @front_end_skill = Skill.where(category: 1,user_id: session[:user_id])
-    # @back_end_skill = Skill.where(category: 2,user_id: session[:user_id])
-    # @database_skill =  Skill.where(category: 3,user_id: session[:user_id])
-    # @other_skill       =  Skill.where(category: 4,user_id: session[:user_id])
-    
     @user = User.find(session[:user_id])
     # @skills = Skill.where(user_id: @user_new.id)
     @works = Work.where(user_id: @user.id)
